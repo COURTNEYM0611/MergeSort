@@ -24,33 +24,33 @@ public class Main{
      }
 
      public static void Merge(int [] A, int low, int mid, int high){
-        int[] result = new int[high - low +1];
+        int[] r = new int[high - low +1];
         int i = low;
         int j = mid + 1;
         int k = 0;
 
         while (i <= mid && j <= high) {
             if (A[i] <= A[j]) {
-                 result[k] = A[i];
+                 r[k] = A[i];
                  i++;
             } else {
-                 result[k] = A[j];
+                 r[k] = A[j];
                  j++;
             }
             k++;
         }
          while (i <= mid) {
-             result[k] = A[i];
+             r[k] = A[i];
              i++;
              k++;
          }
          while (j <= high) {
-             result[k] = A[j];
+             r[k] = A[j];
              j++;
              k++;
          }
          for (i = low; i <= high; i++) {
-             A[i] = result[i - low];
+             A[i] = r[i - low];
          }
 
      }
